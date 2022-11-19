@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+  <head>
+    <style>
+      @font-face {
+        font-family: "Depressive";
+        src: url("./fonts/manic-depressive.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+      }
+      .instruction {
+        font-family: Depressive;
+        font-size: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      .responsive {
+        margin-top: 0px;
+        width: 100%;
+        height: auto;
+      }
+      .row {
+        display: flex;
+      }
+
+      /* Create three equal columns that sits next to each other */
+      .column {
+        flex: 33%;
+        padding: 5px;
+      }
+      body {
+        background-image: url("images/bg.jpg");
+        background-color: #cccccc;
+      }
+      #dataviz_axisZoom {
+        transform: scale(1);
+        transform-origin: 0% 0% 0px;
+        margin: auto;
+        margin-top: 20px;
+        width: 50%;
+      }
+      #instr {
+        margin: auto;
+        width: 50%;
+      }
+      .sketchy {
+        background: transparent;
+        padding: 0.5rem 0.5rem;
+        margin: 0 0.5rem;
+        font-size: 1rem;
+
+        border-top-left-radius: 255px 15px;
+        border-top-right-radius: 15px 225px;
+        border-bottom-right-radius: 225px 15px;
+        border-bottom-left-radius: 15px 255px;
+        border: solid 3px #41403e;
+      }
+
+      .letter {
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin: 0 auto 0;
+        margin-top: 50px;
+        max-width: 5000px;
+        min-height: 1000px;
+        padding: 24px;
+        position: relative;
+        width: 80%;
+      }
+      .letter:before,
+      .letter:after {
+        content: "";
+        height: 98%;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+      }
+      .letter:before {
+        background: #fafafa;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        left: -5px;
+        top: 4px;
+        transform: rotate(-2.5deg);
+      }
+      .letter:after {
+        background: #f6f6f6;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        right: -3px;
+        top: 1px;
+        transform: rotate(1.4deg);
+      }
+    </style>
+    <title>Domestic Violence in Georgia</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="letter">
+      <div class="sketchy" id="dataviz_axisZoom"></div>
+
+      <div class="instruction">
+        <p style="color:rgb(146, 0, 0)">
+          Behind this number are thousands of people who were the victims of
+          domestic violence in Georgia, last year only...
+        </p>
+      </div>
+
+
+        <div class="row" style="margin-left: 10%">
+
+        <div class="column" style="flex:2">
+          <img
+            src="./images/gdepressed2.png"
+            alt="Snow"
+            style="max-width:50%;"
+          />
+        </div>
+        <div class="column" style="flex:5">
+
+        <img src="./images/upperonly.png" style="width:60%">
+        </div>
+        </div>
+
+
+        <div class="instruction">
+          
+        <p style="font-size:20px">There were 6940 female and 1398 male victims. </p>
+        </div>
+        <div class="instruction">
+          
+        <p style="color:rgb(146, 0, 0)"">Statistics is unable  to describe individual 
+          life experiences...</p>
+        </div>
+      
+        <div class="row" style="margin-left: 5%">
+          <div class="colum">
+          <div class="instruction" style="font-size: 20px">
+            <p>
+              Instructions: Zoom into the number in a box <br />to get a sense of
+              how many individual lives have been affected. Number of victims exactly matches the number of circles
+            </p>
+          </div>
+          </div>
+          
+          <div class="colum">
+        <div class="column" style="width: 70%">
+          <img
+            src="./images/bdepressed.png"
+            alt="Forest"
+            style="max-width: 30%"
+          />
+        </div>
+          </div>
+
+        </div>
+
+        <div class="instruction" style="font-size: 20px">
+    <p>
+      Made for datathon, datafest 2022.
+      <br/>
+      Data found via <a href="https://askgov.ge/ka/request/ojaxshi_zaladobis_paktebze_gamoc">ask.gov.ge </a>  and
+      <a href="https://info.police.ge/page?id=564&parent_id=102">statistics </a>  published by MIA of Georgia.
+    </p>
+    </div>
+  </body>
+</html>
